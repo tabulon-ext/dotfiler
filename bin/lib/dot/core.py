@@ -474,7 +474,7 @@ def status(base_dir, home_dir, args):
                 if stdout:
                     def replace_ahead(line):
                         if line.startswith('##'):
-                            match = re.match('^##.*\[ahead (.*?)].*$', line)
+                            match = re.match(r'^##.*\[ahead (.*?)\].*$', line)
                             if match:
                                 return 'Has {0} not pushed change(s).'.format(match.group(1))
                         else:
